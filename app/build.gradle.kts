@@ -7,6 +7,10 @@ android {
     namespace = "com.legendarysz.studentportal"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.legendarysz.studentportal"
         minSdk = 26
