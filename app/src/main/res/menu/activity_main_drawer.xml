@@ -6,15 +6,54 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/home"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/calendar"
+            android:title="Attendance" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/file"
+            android:iconTint="#C4F449"
+            android:title="Details" />
+        <item
+            android:id="@+id/nav_classes"
+            android:icon="@drawable/persons_in_a_class"
+            android:title="Classes" />
+        <item
+            android:id="@+id/nav_subjects"
+            android:icon="@drawable/assessment"
+            android:title="Subjects" />
+        <item
+            android:id="@+id/nav_teacher"
+            android:iconTint="#C4F449"
+            android:icon="@drawable/teacher"
+            android:title="Teacher" />
+        <item
+            android:id="@+id/nav_students"
+            android:icon="@drawable/student_with_graduation_cap"
+            android:title="Students" />
+        <item
+            android:id="@+id/nav_notices"
+            android:icon="@drawable/megaphone"
+            android:title="Notices" />
+        <item
+            android:id="@+id/nav_complaints"
+            android:icon="@drawable/report"
+            android:title="Complaints" />
+
+        <item android:title="" android:enabled="false">
+            <menu>
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/user"
+                    android:title="Profile" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/exit"
+                    android:title="Logout" />
+            </menu>
+        </item>
     </group>
 </menu>
