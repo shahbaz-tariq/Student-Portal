@@ -13,7 +13,7 @@
         android:theme="@style/Theme.StudentPortal"
         tools:targetApi="31">
         <activity
-            android:name=".AdminDashboardActivity"
+            android:name=".MainActivity"
             android:exported="false"
             android:label="@string/title_activity_admin_dashboard"
             android:theme="@style/Theme.StudentPortal.NoActionBar" />
@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true" />
     </application>
 

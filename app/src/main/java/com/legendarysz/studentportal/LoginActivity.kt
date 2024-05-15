@@ -8,21 +8,20 @@ import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.legendarysz.studentportal.databinding.ActivityRegisterBinding
+import com.legendarysz.studentportal.databinding.ActivityLoginBinding
 
-class RegisterActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityRegisterBinding
+    private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnLogin2.setOnClickListener {
-            onBackPressed()
+        binding.btnRegister2.setOnClickListener {
+            startActivity(Intent(this,RegisterActivity::class.java))
         }
-
-        binding.btnRegister1.setOnClickListener {
+        binding.btnLogin1.setOnClickListener {
             when {
                 TextUtils.isEmpty(binding.etEmail.text.toString().trim() { it <= ' ' }) -> {
                     Toast.makeText(
@@ -38,42 +37,18 @@ class RegisterActivity : AppCompatActivity() {
                     ).show()
                 }
 
-                TextUtils.isEmpty(binding.etFName.text.toString().trim() { it <= ' ' }) -> {
-                    Toast.makeText(
-                        this, "Please Enter Name.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-
-                TextUtils.isEmpty(binding.etLName.text.toString().trim() { it <= ' ' }) -> {
-                    Toast.makeText(
-                        this, "Please Enter City.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-
-                TextUtils.isEmpty(binding.etSeat.text.toString().trim() { it <= ' ' }) -> {
-                    Toast.makeText(
-                        this, "Please Enter Internship.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-
                 else -> {
                     val email: String = binding.etEmail.text.toString().trim() { it <= ' ' }
                     val password: String = binding.etPassword.text.toString().trim() { it <= ' ' }
-                    val fname: String = binding.etFName.text.toString()
-                    val lname: String = binding.etLName.text.toString()
-                    val seat: String = binding.etSeat.text.toString()
 
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(
                             OnCompleteListener { task ->
                                 if (task.isSuccessful) {
                                     val firebaseUser: FirebaseUser = task.result!!.user!!
 
                                     Toast.makeText(
-                                        this, "Registered Successfully.",
+                                        this, "Logged In Successfully.",
                                         Toast.LENGTH_SHORT
                                     ).show()
 
@@ -81,14 +56,11 @@ class RegisterActivity : AppCompatActivity() {
                                     intent.flags =
                                         Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     intent.putExtra("email_id", email)
-                                    intent.putExtra("fname", fname)
-                                    intent.putExtra("lname", lname)
-                                    intent.putExtra("seat", seat)
                                     startActivity(intent)
                                     finish()
                                 } else {
                                     Toast.makeText(
-                                        this, task.exception!!.message.toString(),
+                                        this, "Invalid Email/Password",
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 }
@@ -99,6 +71,5 @@ class RegisterActivity : AppCompatActivity() {
 
             }
         }
-
     }
 }

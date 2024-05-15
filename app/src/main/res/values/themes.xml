@@ -3,6 +3,8 @@
     <style name="Base.Theme.StudentPortal" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="android:statusBarColor">@color/black</item>
+        <item name="colorPrimary">#C4F449</item>
+        <item name="colorAccent">@color/black</item>
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "11492649586",
+    "project_id": "authentication-88f6c",
+    "storage_bucket": "authentication-88f6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11492649586:android:dca01592248dca00f570eb",
+        "android_client_info": {
+          "package_name": "com.example.interneepk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwZFEXMxxBsXwNhxs8FxY4kFFnnoM8E04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11492649586:android:f7ca5a30ffc05010f570eb",
+        "android_client_info": {
+          "package_name": "com.legendarysz.studentportal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwZFEXMxxBsXwNhxs8FxY4kFFnnoM8E04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
